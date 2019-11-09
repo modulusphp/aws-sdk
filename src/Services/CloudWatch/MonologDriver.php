@@ -56,6 +56,24 @@ class MonologDriver extends Driver
   }
 
   /**
+   * Get retention days
+   *
+   * @return int|null
+   */
+  private function getRetentionDays() : ?int
+  {
+    return (
+
+      Config::has("logging.channels.{$this->getName()}.days") ?
+
+      Config::get("logging.channels.{$this->getName()}.days") :
+
+      null
+
+    );
+  }
+
+  /**
    * Create AWS cloud watch client
    *
    * @return CloudWatchLogsClient
