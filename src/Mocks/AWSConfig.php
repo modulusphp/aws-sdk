@@ -23,4 +23,22 @@ trait AWSConfig
 
     );
   }
+
+  /**
+   * Get aws default version
+   *
+   * @return string
+   */
+  private function getAWSVersion() : string
+  {
+    return (
+
+      Config::has('aws.version') ?
+
+      Config::get('aws.version') :
+
+      'latest'
+
+    );
+  }
 }
