@@ -1,5 +1,5 @@
 {
-  "name": "modulusphp/modulus-aws-bridge",
+  "name": "modulusphp/aws-sdk-modulus",
   "description": "AWS SDK for Modulus",
   "keywords": ["aws", "php", "modulus", "cloudwatch"],
   "version": "0.0.1",
@@ -13,9 +13,7 @@
     "monolog/monolog": "^2.0"
   },
   "autoload": {
-    "psr-4": {
-      "Modulus\\Aws\\": "src/"
-    }
+    "psr-4": { "Modulus\\Aws\\": "src/" }
   },
   "minimum-stability": "stable"
 }
