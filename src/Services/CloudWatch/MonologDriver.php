@@ -38,6 +38,24 @@ class MonologDriver extends Driver
   }
 
   /**
+   * Get stream name
+   *
+   * @return string
+   */
+  private function getStreamName() : string
+  {
+    return (
+
+      Config::has("logging.channels.{$this->getName()}.steam_name") ?
+
+      Config::get("logging.channels.{$this->getName()}.steam_name") :
+
+      'ec2-instance'
+
+    );
+  }
+
+  /**
    * Create AWS cloud watch client
    *
    * @return CloudWatchLogsClient
