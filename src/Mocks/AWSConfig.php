@@ -59,4 +59,22 @@ trait AWSConfig
 
     );
   }
+
+  /**
+   * Get aws secret
+   *
+   * @return string
+   */
+  private function getAWSSecret() : string
+  {
+    return (
+
+      Config::has('aws.credentials.secret') ?
+
+      Config::get('aws.credentials.secret') :
+
+      ''
+
+    );
+  }
 }
