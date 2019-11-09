@@ -20,6 +20,24 @@ class MonologDriver extends Driver
   }
 
   /**
+   * Get group name
+   *
+   * @return string
+   */
+  private function getGroupName() : string
+  {
+    return (
+
+      Config::has("logging.channels.{$this->getName()}.group_name") ?
+
+      Config::get("logging.channels.{$this->getName()}.group_name") :
+
+      '/aws/modulus/application'
+
+    );
+  }
+
+  /**
    * Create AWS cloud watch client
    *
    * @return CloudWatchLogsClient
