@@ -8,7 +8,7 @@ Install
 Require the package with composer:
 
 ```
-composer require modulus/aws-sdk-modulus
+composer require modulus/aws-sdk
 ```
 
 Create a `aws.php` config file:
@@ -75,7 +75,7 @@ class AppServiceResolver extends Service
 }
 ```
 
-Once you have registered the `cloudwatch` driver and added a new channel for `cloudwatch`, you can start logging to AWS CloudWatch.
+Once you have registered the `cloudwatch` driver and added a new channel for `cloudwatch`, you can start logging to AWS CloudWatch:
 
 ```php
 \Log::channel('cloudwatch')->info('Successfully created a new user', ['name' => 'Donald', 'age' => 22]);
