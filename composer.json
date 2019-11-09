@@ -1,5 +1,5 @@
 {
-  "name": "modulusphp/aws-sdk-modulus",
+  "name": "modulusphp/aws-sdk",
   "description": "AWS SDK for Modulus",
   "keywords": ["aws", "php", "modulus", "cloudwatch"],
   "version": "0.0.1",
