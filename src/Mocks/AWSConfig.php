@@ -41,4 +41,22 @@ trait AWSConfig
 
     );
   }
+
+  /**
+   * Get aws key
+   *
+   * @return string
+   */
+  private function getAWSKey() : string
+  {
+    return (
+
+      Config::has('aws.credentials.key') ?
+
+      Config::get('aws.credentials.key') :
+
+      ''
+
+    );
+  }
 }
