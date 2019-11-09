@@ -2,14 +2,36 @@
 
 namespace Modulus\Aws\Services\CloudWatch;
 
+use Modulus\Support\Config;
 use Modulus\Aws\Mocks\AWSConfig;
 use Monolog\Formatter\JsonFormatter;
 use Modulus\Hibernate\Logging\Driver;
+use Monolog\Handler\HandlerInterface;
 use Aws\CloudWatchLogs\CloudWatchLogsClient;
 
 class MonologDriver extends Driver
 {
   use AWSConfig;
+
+  /**
+   * {@inheritDoc}
+   */
+  public function handler() : HandlerInterface
+  {
+    return new Handler(
+
+      $this->getAWSClient(),
+
+      $this->getGroupName(),
+
+      $this->getStreamName(),
+
+      $this->getRetentionDays(),
+
+      10000
+
+    );
+  }
 
   /**
    * {@inheritDoc}
